@@ -30,9 +30,9 @@
         <td><%= company.address %></td>
         <td><%= company.phone %></td>
         <td><%= company.website %></td>
-        <td><%= link_to 'Show', company, class: "btn btn-link" %></td>
-        <td><%= link_to 'Edit', edit_company_path(company), class: "btn btn-link" %></td>
-        <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %></td>
+        <td><%= link_to 'Show', company, class: "btn btn-info" %></td>
+        <td><%= link_to 'Edit', edit_company_path(company), class: "btn btn-success" %></td>
+        <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -40,7 +40,7 @@
 
 <br>
 
-<%= link_to 'New Company', new_company_path, class: "btn btn-link" %>
+<%= link_to 'New Company', new_company_path, class: "btn btn-primary" %>
 
 <!-- Adding Image to the bottom --> 
 <%= image_tag "https://s3.eu-west-3.amazonaws.com/wegetreview/Buildings.png" %>

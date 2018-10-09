@@ -76,6 +76,9 @@ gem "figaro"
 # MiniMagick gem
 gem "mini_magick"
 
+# Devise gem
+gem "devise"
+
 
 
 
