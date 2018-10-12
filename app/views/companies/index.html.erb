@@ -5,7 +5,7 @@
     Explore the user's favorite company which provide good products & services in your area.<br>
     Leave reviews and rating for your fellow companies.
   </h3><br>
-  <button type="button" class="btn btn-danger">Create Your Free Account Now !!</button>
+  <button type="button" class="btn btn-danger"><%= link_to "Create Your Free Account Now !!", new_user_registration_path, class: "nav-link" %></button>
 </div>
 
 <p id="notice"><%= notice %></p>
@@ -29,7 +29,7 @@
         <td><%= company.name %></td>
         <td><%= company.address %></td>
         <td><%= company.phone %></td>
-        <td><%= company.website %></td>
+        <td><%= link_to company.website, company.website %></td>
         <td><%= link_to 'Show', company, class: "btn btn-info" %></td>
         <td><%= link_to 'Edit', edit_company_path(company), class: "btn btn-success" %></td>
         <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
