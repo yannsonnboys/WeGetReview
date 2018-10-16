@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
-  resources :reviews, except: [:show, :index]
+  
   devise_for :users
 	# Library
-  resources :companies
+  resources :companies do
+    resources :reviews, except: [:show, :index]
+  end
+   
   resources :restaurants
 
   # Get the About & Contact pages

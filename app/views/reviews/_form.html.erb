@@ -1,5 +1,5 @@
 <div class="col-md-8 offset-md-2">
-  <%= form_with(model: review, local: true) do |form| %>
+  <%= form_with(model: [@company, review], local: true) do |form| %>
     <% if review.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(review.errors.count, "error") %> prohibited this review from being saved:</h2>
