@@ -1,27 +1,46 @@
-<!-- image for the company -->
-<%= image_tag @company.image_url %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @company.name %>
-</p>
+<div class="row">
+	<div class="col-md-4">
+		<!-- image for the company -->
+		<%= image_tag @company.image_url %>
 
-<p>
-  <strong>Address:</strong>
-  <%= @company.address %>
-</p>
+		<h2>
+		  <%= @company.name %>
+		</h2>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @company.phone %>
-</p>
+		<p>
+		  <strong>Address:</strong>
+		  <%= @company.address %>
+		</p>
 
-<p>
-  <strong>Website:</strong>
-  <%= @company.website %>
-</p>
+		<p>
+		  <strong>Phone:</strong>
+		  <%= @company.phone %>
+		</p>
 
-<%= link_to 'Write a Review', new_company_review_path(@company), class: "btn btn-primary" %>
+		<p>
+		  <strong>Website:</strong>
+		  <%= link_to @company.website, @company.website %>
+		</p>
+
+		<%= link_to 'Write a Review', new_company_review_path(@company), class: "btn btn-primary" %>
+	</div>
+
+	<div class="col-md-8">
+		<!-- Get all the reviews -->
+		<% if @reviews.blank? %>
+			<br><h4>No reviews yet. Be the first to write one!</h4>
+		<% else %>
+			<% @reviews.each do |review| %>
+				<p><%= review.rating %></p>
+				<p><%= review.comment %></p>
+			<% end %>
+		<% end %>
+	</div>
+</div><br>
+
 
 <%= link_to 'Edit', edit_company_path(@company), class: "btn btn-success" %> |
 <%= link_to 'Back', companies_path, class: "btn btn-primary" %>
+
+
