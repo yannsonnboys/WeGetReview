@@ -32,7 +32,7 @@
 			<br><h4>No reviews yet. Be the first to write one!</h4>
 		<% else %>
 			<% @reviews.each do |review| %>
-				<p><%= review.rating %></p>
+				<div class="star-rating" data-score= <%= review.rating %> ></div> <!-- The rating stars come here -->
 				<p><%= review.comment %></p>
 			<% end %>
 		<% end %>
@@ -43,4 +43,14 @@
 <%= link_to 'Edit', edit_company_path(@company), class: "btn btn-success" %> |
 <%= link_to 'Back', companies_path, class: "btn btn-primary" %>
 
+<!-- jQuery for rating option -->
+<script>
+	$('.star-rating').raty({
+		path: 'https://s3.eu-west-3.amazonaws.com/wegetreview/stars',
+		readOnly: true,
+		score: function() {
+			return $(this).attr('data-score');
+		}
+	});
+</script>
 
